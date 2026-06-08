@@ -1,0 +1,6 @@
+{
+  "name": "Sri Narayana Enterprises",
+  "description": "Professional construction materials ordering platform featuring paints, putty, cement, and steel rods with WhatsApp and email integrations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
