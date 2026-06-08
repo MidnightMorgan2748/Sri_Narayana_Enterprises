@@ -125,6 +125,10 @@ async function syncSupabaseAuthAdmins() {
 
       if (authUserId) {
         try {
+          // Resolve any UUID conflicts between database seed static IDs and actual Supabase Auth IDs
+          await supabase.from("users").delete().eq("email", adm.email).neq("id", authUserId);
+          await supabase.from("admin_users").delete().eq("email", adm.email).neq("id", authUserId);
+
           const syncRecord = {
             id: authUserId,
             email: adm.email,
