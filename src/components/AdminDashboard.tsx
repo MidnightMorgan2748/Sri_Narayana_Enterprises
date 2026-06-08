@@ -77,7 +77,7 @@ export default function AdminDashboard({
       setSmtpResult({
         success: false,
         timestamp: new Date().toISOString(),
-        recipient: "venkateshkarnati16@gmail.com",
+        recipient: "tamatamnarayana9@gmail.com",
         logs: [
           `[${new Date().toISOString()}] [CRITICAL ERROR] Failed to complete test fetch request.`,
           `[CRITICAL DETAILED ERROR] ${e.message || "Connection refused/network issue."}`

@@ -139,7 +139,7 @@ export default function PremiumContactSection({ onSuccessSubmit }: PremiumContac
               </a>
 
               <a 
-                href="mailto:venkateshkarnati16@gmail.com" 
+                href="mailto:tamatamnarayana9@gmail.com" 
                 className="flex items-center gap-3.5 group p-2 rounded-xl hover:bg-white/5 transition-all"
               >
                 <div className="p-2.5 bg-gradient-to-tr from-sky-500 to-indigo-500 text-white rounded-xl shadow-md">
@@ -148,7 +148,7 @@ export default function PremiumContactSection({ onSuccessSubmit }: PremiumContac
                 <div className="text-left">
                   <p className="text-[10px] font-mono font-black tracking-wider text-slate-400 uppercase">Dealer Desk Email</p>
                   <p className="text-xs font-extrabold text-white font-mono group-hover:text-sky-400 transition-colors truncate max-w-[200px] sm:max-w-none">
-                    venkateshkarnati16@gmail.com
+                    tamatamnarayana9@gmail.com
                   </p>
                 </div>
               </a>

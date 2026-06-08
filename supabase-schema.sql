@@ -239,14 +239,12 @@ CREATE POLICY "Allow public gallery" ON gallery FOR ALL USING (true);
 
 -- Seed Owners Accounts in users
 INSERT INTO users (id, email, role, full_name, is_active) VALUES
-('b80461bf-ee21-4f1a-b333-e18e6cb0f455', 'venkateshkarnati16@gmail.com', 'super_admin', 'Venkatesh Karnati', true),
 ('a59cbdef-f123-4c56-b789-d123e45f6789', 'tamatamnarayana9@gmail.com', 'super_admin', 'Tamatam Narayana', true),
 ('c73dbdef-f456-4c78-b901-e234e56f7890', 'draghureddy2748@gmail.com', 'admin', 'Raghu Reddy', true)
 ON CONFLICT (id) DO UPDATE SET role = EXCLUDED.role, is_active = EXCLUDED.is_active;
 
 -- Seed Owners Accounts in admin_users
 INSERT INTO admin_users (id, email, role, full_name, is_active) VALUES
-('b80461bf-ee21-4f1a-b333-e18e6cb0f455', 'venkateshkarnati16@gmail.com', 'super_admin', 'Venkatesh Karnati', true),
 ('a59cbdef-f123-4c56-b789-d123e45f6789', 'tamatamnarayana9@gmail.com', 'super_admin', 'Tamatam Narayana', true),
 ('c73dbdef-f456-4c78-b901-e234e56f7890', 'draghureddy2748@gmail.com', 'admin', 'Raghu Reddy', true)
 ON CONFLICT (id) DO UPDATE SET role = EXCLUDED.role, is_active = EXCLUDED.is_active;

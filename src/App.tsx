@@ -680,7 +680,7 @@ function AppContent() {
               </p>
               <p className="flex items-start gap-1.5">
                 <span className="text-[#FF7A00] font-bold shrink-0">Email:</span>
-                <a href="mailto:venkateshkarnati16@gmail.com" className="hover:text-[#FF7A00] transition-colors text-white font-mono break-all">venkateshkarnati16@gmail.com</a>
+                <a href="mailto:tamatamnarayana9@gmail.com" className="hover:text-[#FF7A00] transition-colors text-white font-mono break-all">tamatamnarayana9@gmail.com</a>
               </p>
               <p className="flex items-start gap-1.5">
                 <span className="text-[#FF7A00] font-bold shrink-0">Showroom:</span>

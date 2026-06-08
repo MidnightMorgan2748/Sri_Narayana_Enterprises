@@ -53,12 +53,6 @@ async function syncSupabaseAuthAdmins() {
 
   const targetAdmins = [
     {
-      email: "venkateshkarnati16@gmail.com",
-      password: "Venky@123",
-      role: "super_admin",
-      full_name: "Venkatesh Karnati"
-    },
-    {
       email: "tamatamnarayana9@gmail.com",
       password: "Narayana@123",
       role: "super_admin",
@@ -118,8 +112,7 @@ async function syncSupabaseAuthAdmins() {
 
       // Default fallback id if both Auth and DB lookup didn't yield an id yet
       if (!authUserId) {
-        if (adm.email === "venkateshkarnati16@gmail.com") authUserId = "b80461bf-ee21-4f1a-b333-e18e6cb0f455";
-        else if (adm.email === "tamatamnarayana9@gmail.com") authUserId = "a59cbdef-f123-4c56-b789-d123e45f6789";
+        if (adm.email === "tamatamnarayana9@gmail.com") authUserId = "a59cbdef-f123-4c56-b789-d123e45f6789";
         else authUserId = "c73dbdef-f456-4c78-b901-e234e56f7890";
       }
 
@@ -444,16 +437,6 @@ const INITIAL_ADMINS = [
     last_login_at: null
   },
   {
-    id: "admin-2",
-    email: "venkateshkarnati16@gmail.com",
-    role: "super_admin",
-    password: "Venky@123",
-    full_name: "Venkatesh Karnati",
-    is_active: true,
-    created_at: "2026-06-07T00:00:00.000Z",
-    last_login_at: null
-  },
-  {
     id: "admin-3",
     email: "draghureddy2748@gmail.com",
     role: "admin",
@@ -580,7 +563,6 @@ app.post("/api/auth/login", async (req, res) => {
   // Pure Whitelist Validation to isolate administrative accounts
   const WHITELISTED_ADMINS = [
     "tamatamnarayana9@gmail.com",
-    "venkateshkarnati16@gmail.com",
     "draghureddy2748@gmail.com"
   ];
 
@@ -735,7 +717,6 @@ app.get("/api/admin/users", requireOwner, async (req, res) => {
 
 app.get("/api/admin/auth-provision-status", requireSuperAdmin, async (req, res) => {
   const baseAdmins = [
-    { email: "venkateshkarnati16@gmail.com", role: "super_admin", full_name: "Venkatesh Karnati", temp_password: "Venky@123", status: "Active" },
     { email: "tamatamnarayana9@gmail.com", role: "super_admin", full_name: "Tamatam Narayana", temp_password: "Narayana@123", status: "Active" },
     { email: "draghureddy2748@gmail.com", role: "admin", full_name: "Raghu Reddy", temp_password: "Raghu@123", status: "Active" }
   ];
@@ -1020,7 +1001,7 @@ app.post("/api/admin/smtp-test", requireOwner, async (req, res) => {
   const adminEmail = req.headers["x-admin-email"] || "Super Admin";
   const diagnosticLogs: string[] = [];
   const timestamp = new Date().toISOString();
-  const recipient = "venkateshkarnati16@gmail.com";
+  const recipient = "tamatamnarayana9@gmail.com";
 
   let host = process.env.SMTP_HOST || "smtp.gmail.com";
   if (host.trim().toLowerCase() === "stmp.gmail.com") {
@@ -1752,7 +1733,7 @@ function sendAutomaticOrderEmail(orderId: string, customer: any, items: any[], t
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
-  const ownerEmail = "venkateshkarnati16@gmail.com";
+  const ownerEmail = "tamatamnarayana9@gmail.com";
   const trackingLink = `${baseUrl}/track-order/${orderId}`;
 
   let htmlBody = `
@@ -2080,7 +2061,7 @@ app.post("/api/orders", async (req, res) => {
     addLog(
       "system",
       "NEW_ORDER_CREATED",
-      `Order ${orderId} placed by ${customer.name} (Mobile: ${customer.mobile}) for ₹${total}. Invoice copies auto-sent to venkateshkarnati16@gmail.com and customer email.`
+      `Order ${orderId} placed by ${customer.name} (Mobile: ${customer.mobile}) for ₹${total}. Invoice copies auto-sent to tamatamnarayana9@gmail.com and customer email.`
     );
 
     // Call nodemailer automatic email pipeline
@@ -2100,7 +2081,7 @@ app.post("/api/orders", async (req, res) => {
         subject: emailSubject,
         body: emailBody,
         recipient: customer.email,
-        ownerRecipient: "venkateshkarnati16@gmail.com" // Shop owner email
+        ownerRecipient: "tamatamnarayana9@gmail.com" // Shop owner email
       }
     });
 
@@ -2282,7 +2263,7 @@ app.post("/api/ai/consultation", async (req, res) => {
         
   If requested or helpful, provide the shop's official contact details:
   - Contact/WhatsApp Number: +91 98487 42012
-  - Email: venkateshkarnati16@gmail.com
+  - Email: tamatamnarayana9@gmail.com
   - Showroom Location: https://maps.app.goo.gl/cmgNiefGzWXauKs1A?g_st=aw
 
   Provide clear, factual, and helpful analysis, calculations, or paint shade pairings based on the user's inquiry.

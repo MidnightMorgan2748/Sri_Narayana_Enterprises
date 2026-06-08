@@ -521,7 +521,7 @@ export default function CartModal({
                         <span className="text-emerald-500 font-bold mt-0.5">✓</span>
                         <div>
                           <span className="font-extrabold text-slate-800 block">Emailed to Business Owner</span>
-                          <span className="text-[10px] text-slate-500">Order details automatically emailed to shop owner at venkateshkarnati16@gmail.com.</span>
+                          <span className="text-[10px] text-slate-500">Order details automatically emailed to shop owner at tamatamnarayana9@gmail.com.</span>
                         </div>
                       </div>
                       <div className="flex items-start gap-2 text-xs">
@@ -546,7 +546,7 @@ export default function CartModal({
                     </span>
                     <h5 className="font-extrabold text-base text-[#071A35] pt-1">Manual Email Backup</h5>
                     <p className="text-[11px] text-slate-500 leading-normal font-sans">
-                      No email received? Tap below to invoke your native mail app (Gmail/Outlook) with a pre-written invoice pre-addressed to venkateshkarnati16@gmail.com.
+                      No email received? Tap below to invoke your native mail app (Gmail/Outlook) with a pre-written invoice pre-addressed to tamatamnarayana9@gmail.com.
                     </p>
                   </div>
                   <a
