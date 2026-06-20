@@ -1001,7 +1001,7 @@ app.post("/api/admin/smtp-test", requireOwner, async (req, res) => {
   const adminEmail = req.headers["x-admin-email"] || "Super Admin";
   const diagnosticLogs: string[] = [];
   const timestamp = new Date().toISOString();
-  const recipient = "tamatamnarayana9@gmail.com";
+  const recipient = process.env.SMTP_USER || "tamatamnarayana9@gmail.com";
 
   let host = process.env.SMTP_HOST || "smtp.gmail.com";
   if (host.trim().toLowerCase() === "stmp.gmail.com") {
@@ -1733,7 +1733,7 @@ function sendAutomaticOrderEmail(orderId: string, customer: any, items: any[], t
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
-  const ownerEmail = "tamatamnarayana9@gmail.com";
+  const ownerEmail = process.env.SMTP_USER || "tamatamnarayana9@gmail.com";
   const trackingLink = `${baseUrl}/track-order/${orderId}`;
 
   let htmlBody = `
@@ -2081,7 +2081,7 @@ app.post("/api/orders", async (req, res) => {
         subject: emailSubject,
         body: emailBody,
         recipient: customer.email,
-        ownerRecipient: "tamatamnarayana9@gmail.com" // Shop owner email
+        ownerRecipient: process.env.SMTP_USER || "tamatamnarayana9@gmail.com" // Shop owner email
       }
     });
 
