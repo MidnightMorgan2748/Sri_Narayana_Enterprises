@@ -2960,9 +2960,13 @@ async function initServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Sri Narayana Enterprises backend running on http://localhost:${PORT}`);
-  });
+  if (!process.env.VERCEL) {
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Sri Narayana Enterprises backend running on http://localhost:${PORT}`);
+    });
+  } else {
+    console.log("Sri Narayana Enterprises running in Vercel Serverless environment.");
+  }
 }
 
 initServer();
