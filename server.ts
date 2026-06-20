@@ -2966,3 +2966,5 @@ async function initServer() {
 }
 
 initServer();
+
+export default app;
